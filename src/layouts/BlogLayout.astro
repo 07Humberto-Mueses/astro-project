@@ -1,0 +1,30 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import ReviewCard from "../components/ReviewCard.astro";
+---
+
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800&display=swap"
+  rel="stylesheet"
+/>
+<main class="flex flex-col min-h-screen bg-[#f6ffec]">
+  <Header />
+  <div class="flex-grow container mx-auto px-4 py-8">
+    <slot />
+  </div>
+  <Footer />
+</main>
+
+<style>
+  main {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+</style>

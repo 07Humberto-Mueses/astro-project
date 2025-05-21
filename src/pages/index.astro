@@ -1,0 +1,50 @@
+---
+import BlogLayout from "../layouts/BlogLayout.astro";
+import ReviewCard from "../components/ReviewCard.astro";
+import "../styles/global.css";
+
+const reviews = [
+  {
+    title: "Stranger Things",
+    description:
+      "Un grupo de niños en los años 80 enfrenta fuerzas sobrenaturales cuando su amigo desaparece misteriosamente. Con una mezcla de terror, ciencia ficción y nostalgia ochentera, la serie ha cautivado por su historia intrigante y personajes entrañables.",
+    rating: 5,
+    imageUrl:
+      "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2022/05/24/stranger-things.jpeg",
+  },
+  {
+    title: "Adolescencia",
+    description:
+      "Adolescencia​ es una miniserie de televisión de drama criminal británica de 2025 creada por Jack Thorne y Stephen Graham y dirigida por Philip Barantini. La serie gira en torno a Jamie, un joven de 13 años que es arrestado acusado de asesinar a una compañera de clase.",
+    rating: 4,
+    imageUrl:
+      "https://imagenes.elpais.com/resizer/v2/PQOEVARS3JAOZNAGCTYNHOCFVE.jpg?auth=9611209fef9835e71f1256a88f89923090b60ec4253bf55fa0088eaebd04a30f&width=414",
+  },
+  {
+    title: "Breaking Bad",
+    description:
+      "Un profesor de química con cáncer terminal se convierte en fabricante de metanfetaminas para asegurar el futuro de su familia. Con una trama intensa y giros inesperados, es una de las series más aclamadas por su desarrollo de personajes y su tensión constante.",
+    rating: 5,
+    imageUrl:
+      "https://hipermediaciones.com/wp-content/uploads/2013/10/21225_breaking_bad.jpg",
+  },
+];
+---
+
+<BlogLayout>
+  <main class="p-4">
+    <h1 class="text-3xl font-bold mb-4">Series</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        reviews.map((review) => (
+          <ReviewCard
+            title={review.title}
+            description={review.description}
+            imageUrl={review.imageUrl}
+            rating={review.rating}
+          />
+        ))
+      }
+    </div>
+  </main>
+</BlogLayout>
